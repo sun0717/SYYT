@@ -6,9 +6,7 @@
     <div class="content">
       xxx
     </div>
-    <div class="bottom">
-      123123
-    </div>
+    <HospitalBottom />
   </div>
 </template>
 
@@ -27,7 +25,6 @@ import HospitalBottom from '@/components/hospital_bottom/index.vue'
     width: 1200px;
     height: 700px;
     margin-top: 70px;
-    background-color: red;
   }
 
 }
