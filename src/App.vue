@@ -4,7 +4,7 @@
     <HospitalTop />
     <!-- 展示路由组件的区域 -->
     <div class="content">
-      xxx
+      <RouterView />
     </div>
     <HospitalBottom />
   </div>
