@@ -6,7 +6,7 @@
     <div class="content">
       <RouterView />
     </div>
-    <HospitalBottom />
+    <HospitalBottom class="bottom"/>
   </div>
 </template>
 
@@ -24,9 +24,12 @@ import HospitalBottom from '@/components/hospital_bottom/index.vue'
 
   .content {
     width: 1200px;
-    height: 700px;
+    // height: 700px;
     margin-top: 70px;
   }
 
+  .bottom {
+    margin-top: 70px;
+  }
 }
 </style>

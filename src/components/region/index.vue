@@ -3,22 +3,37 @@
         <div class="content">
             <div class="left">地区:</div>
             <ul class="">
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
-                <li>昌平区</li>
+                <li :class="{ active: activeFlag=='' }" @click="changeRegion('')">全部</li>
+                <li v-for="region in regionArr" :key="region.value" @click="changeRegion(region.value)" :class="{ active: activeFlag == region.value}">{{ region.name }}</li>
             </ul>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+import { hospitalLevelAndRegionAPI } from '@/apis/home'
+import { HospitalLevelAndRegionResponseData, HospitalLevelAndRegionArr } from '@/apis/home/type'
+import { ref, onMounted } from 'vue'
+// 存储地区的数据
+const regionArr = ref<HospitalLevelAndRegionArr>([])
+// 地区高亮的响应式数据
+let activeFlag = ref<string>('')
+// 地区组件挂载完毕获取地区数据
+onMounted(() => {
+    getRegion()
+})
+// 获取地区的数据
+const getRegion = async () => {
+    let result:HospitalLevelAndRegionResponseData = await hospitalLevelAndRegionAPI("Beijin")
+    if (result.code === 200) {
+        regionArr.value = result.data
+    }
+}
+// 点击地区的按钮回调
+const changeRegion = (region: string) => {
+    // 高亮响应式数据存储level数值
+    activeFlag.value = region
+}
 </script>
 
 <style scoped lang="scss">
