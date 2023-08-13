@@ -9,9 +9,9 @@ enum API {
     HOSPITALLEVELANDREGION_URL='/cmn/dict/findByDictCode/'
 }
 
-export const hospitalAPI = (page: number, limit: number) => {
+export const hospitalAPI = (page: number, limit: number, hostype='', districtCode='') => {
     return httpInstance<any, HospitalResponseData>({
-        url: API.HOSPITAL_URL + `${page}/${limit}`
+        url: API.HOSPITAL_URL + `${page}/${limit}?hostype=${hostype}&districtCode=${districtCode}`
     })
 }
 

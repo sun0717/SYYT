@@ -33,7 +33,10 @@ const getRegion = async () => {
 const changeRegion = (region: string) => {
     // 高亮响应式数据存储level数值
     activeFlag.value = region
+    $emit('getRegion', region)
 }
+
+let $emit = defineEmits([`getRegion`])
 </script>
 
 <style scoped lang="scss">
