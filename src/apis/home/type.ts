@@ -93,3 +93,8 @@ export type HospitalLevelAndRegionArr = HospitalLevelAndRegion[]
 export interface HospitalLevelAndRegionResponseData extends ResponseData {
     data: HospitalLevelAndRegionArr
 }
+
+//根据关键字获取医院的数据进行展示
+export interface HospitalInfo extends ResponseData {
+    data: Content
+}

@@ -91,6 +91,8 @@ const getRegion = (region:string) => {
     // 再次发请求
     getHospital()
 }
+
+
 </script>
 
 <style scoped lang="scss">
