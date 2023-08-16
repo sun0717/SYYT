@@ -53,7 +53,12 @@ import {
     Document, Menu as IconMenu, Search, Clock, Warning, HomeFilled
 } from '@element-plus/icons-vue'
 
+import { useDetailStore } from '@/store/DetailStore.ts'
+import { onMounted } from 'vue' 
 
+onMounted(() => {
+    useDetailStore.
+})
 </script>
 
 <style scoped lang="scss">

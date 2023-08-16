@@ -31,8 +31,17 @@ let router = useRouter()
 // 点击医院卡片的时候跳转到医院详情页面
 const goDetail = () => {
     // console.log(props.hospitalInfo)
+    // router.push({
+    //     path: '/hospital/register',
+    //     query: {
+    //         hoscode: 
+    //     }
+    // })
     router.push({
-        path: '/hospital',
+        path: '/hospital/register',
+        query: {
+            hoscode: props.hospitalInfo.hoscode
+        }
     })
 }
 
